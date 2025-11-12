@@ -1,0 +1,15 @@
+# Virtual environments
+.venv
+venv/
+venv
+
+# Data directory (do not commit datasets)
+data/
+
+# Reference instructions (not part of the challenge repo)
+10 Academy - KAIM - Week 0.pdf
+Report Submission Guideline.pdf
+
+# Reference folders (for guidance only; exclude from repo)
+Refereence Instructions for the week 0 challange (not part of the repo - folder to be deleted after finishing the challange)/
+TASKS Tutorials given to us as a sample (not part of the repo - to be deleted after finishing the challange)/
