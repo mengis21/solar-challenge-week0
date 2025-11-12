@@ -13,3 +13,20 @@ Report Submission Guideline.pdf
 # Reference folders (for guidance only; exclude from repo)
 Refereence Instructions for the week 0 challange (not part of the repo - folder to be deleted after finishing the challange)/
 TASKS Tutorials given to us as a sample (not part of the repo - to be deleted after finishing the challange)/
+
+# Python caches
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Notebook checkpoints
+.ipynb_checkpoints/
+
+# OS clutter
+.DS_Store
+Thumbs.db
+
+# Logs / temp
+*.log
+*.tmp

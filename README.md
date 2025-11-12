@@ -1,46 +1,53 @@
 # Solar Data Discovery — Week 0 Challenge
 
-A lightweight, reproducible repository for KAIM 10 Academy Week 0: Solar Data Discovery — from setup to an optional Streamlit dashboard.
+A lean, reproducible repository for KAIM Week 0: Solar Data Discovery — setup to dashboard.
 
 ## Repo structure
-- `src/` — Python package for data prep, features, and utilities
-- `notebooks/` — EDA and exploration notebooks (empty for now)
-- `app/` — Streamlit app (to be added)
-- `tests/` — Minimal tests (to be added)
-- `data/` — Ignored by git. Place your local datasets here (e.g., per-country CSVs)
+- `src/` — data ingestion, preprocessing, cleaning, summarization, baseline model
+- `notebooks/` — per-country EDA and cross-country comparison
+- `metrics/` — saved metrics and summaries (e.g., baseline.json, country_summary.json)
+- `data/` — ignored by git. Place your local per-country CSVs and cleaned CSVs here
+- `app.py` — Streamlit dashboard entry point
+- `REPORT.md` — final report (convert to PDF)
 
 ## Quick setup
-Using a local virtual environment (no activation required in commands):
-
-```bash
+```
 python3 -m venv .venv
 ./.venv/bin/python -m pip install --upgrade pip
-./.venv/bin/pip install -r requirements.txt  # (Optional: we’ll add later) or install packages individually
+./.venv/bin/pip install -r requirements.txt
 ```
 
-Current core packages installed in the workspace env:
-- numpy, pandas, matplotlib, seaborn, scikit-learn
-- jupyter, pvlib, streamlit, plotly
-- python-dotenv, requests
-
 ## Data
-- The `data/` folder is ignored by git to keep the repo lean.
-- Put your datasets under `data/` (e.g., `data/country_A_sales.csv`, etc.).
-- We will document provenance and download/placement steps as we proceed.
+- Put the three country CSVs under `data/` (ignored by git).
+- Cleaned files will be written as `data/benin_clean.csv`, `data/sierraleone_clean.csv`, `data/togo_clean.csv`.
 
-## How to run (quick)
-- Jupyter (EDA):
-  ```bash
-  ./.venv/bin/jupyter lab
-  ```
-- Streamlit (dashboard, when added):
-  ```bash
-  ./.venv/bin/streamlit run app/main.py
-  ```
+## How to run
+- Generate cleaned CSVs (optional, already done once):
+```
+./.venv/bin/python src/clean_countries.py
+```
+- Country stats and tests (for report):
+```
+./.venv/bin/python src/summarize_countries.py
+```
+- Baseline metrics:
+```
+./.venv/bin/python src/model_baseline.py
+```
+- Notebooks (EDA/comparison):
+```
+./.venv/bin/jupyter lab
+```
+- Streamlit dashboard:
+```
+./.venv/bin/streamlit run app.py
+```
 
-## Next steps
-- [ ] Add data ingestion script(s) under `src/` and document data provenance
-- [ ] Create initial EDA notebook in `notebooks/`
-- [ ] Implement preprocessing/feature engineering in `src/`
-- [ ] Baseline model and evaluation
-- [ ] Build Streamlit dashboard under `app/`
+## Results (short)
+- GHI mean ranking: Benin > Togo > Sierra Leone
+- GHI tests: ANOVA p ≈ 0.0; Kruskal–Wallis p ≈ 0.0 (significant differences)
+- Baseline best: RandomForest, test MAE ≈ 3.68, RMSE ≈ 7.84
+
+## Notes
+- Reference PDFs and tutorial folders are ignored by git and not part of the submission.
+- Add dashboard screenshots to `dashboard_screenshots/` before finalizing.
