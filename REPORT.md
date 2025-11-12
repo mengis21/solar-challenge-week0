@@ -50,11 +50,7 @@ Results snapshot:
 - Investigate operational gains related to Cleaning (ModA/ModB improvements).
 - Next steps: feature engineering, weather-seasonal analysis, PV production modeling.
 
-## 8. Screenshots (to insert)
-- Dashboard UI: `dashboard_screenshots/` (add after running `streamlit run app.py`).
-- Selected EDA plots from notebooks (time series, boxplots, correlation heatmap).
-
-## 9. Reproducibility
+## 8. Reproducibility
 - Environment: Python 3.11+, `requirements.txt`.
 - Data: place the three CSVs under `data/` (ignored by git).
 - Scripts:
@@ -66,4 +62,4 @@ Results snapshot:
 ## 10. Acknowledgements
 - References: Day1–Day3 tutorials (used as guidance only), KAIM instructions and sample blueprint.
 
-Convert this file to PDF for final submission after adding screenshots.
+Convert this file to PDF for final submission.
