@@ -1,14 +1,26 @@
 # Solar Data Discovery — Week 0 Challenge
 
-A lean, reproducible repository for KAIM Week 0: Solar Data Discovery — setup to dashboard.
+Arepository for KAIM Week 0: Solar Data Discovery
+
+## ABOUT M3
+```
+____________________________________________________________________________________
+|                  10 Academy Week 0 — Solar Data Discovery Challenge               |
+|-----------------------------------------------------------------------------------|
+| Name: Kidus Mengistu Gebremedhin            Status: Final Assignment Submission   |
+| Cohort: Week 0 			         		  Due Date: Nov 12, 2025				    |
+|																					|
+| Project: Cross-country solar farm exploratory analysis (Benin, Sierra Leone, Togo)|
+------------------------------------------------------------------------------------
+```
 
 ## Repo structure
 - `src/` — data ingestion, preprocessing, cleaning, summarization, baseline model
 - `notebooks/` — per-country EDA and cross-country comparison
 - `metrics/` — saved metrics and summaries (e.g., baseline.json, country_summary.json)
-- `data/` — ignored by git. Place your local per-country CSVs and cleaned CSVs here
+- `data/` — ignored by git. Holds per-country CSVs and cleaned CSVs
 - `app.py` — Streamlit dashboard entry point
-- `REPORT.md` — final report (convert to PDF)
+- `.github/workflows/`    # CI workflows
 
 ## Quick setup
 ```
@@ -21,22 +33,19 @@ python3 -m venv .venv
 - Put the three country CSVs under `data/` (ignored by git).
 - Cleaned files will be written as `data/benin_clean.csv`, `data/sierraleone_clean.csv`, `data/togo_clean.csv`.
 
-## How to run
-- Generate cleaned CSVs (optional, already done once):
+## How to run (Assuming all requirments are installed)
+- Generate cleaned CSVs:
 ```
 ./.venv/bin/python src/clean_countries.py
 ```
-- Country stats and tests (for report):
+- Country stats and tests:
 ```
 ./.venv/bin/python src/summarize_countries.py
 ```
 - Baseline metrics:
 ```
 ./.venv/bin/python src/model_baseline.py
-```
-- Notebooks (EDA/comparison):
-```
-./.venv/bin/jupyter lab
+
 ```
 - Streamlit dashboard:
 ```
@@ -48,6 +57,13 @@ python3 -m venv .venv
 - GHI tests: ANOVA p ≈ 0.0; Kruskal–Wallis p ≈ 0.0 (significant differences)
 - Baseline best: RandomForest, test MAE ≈ 3.68, RMSE ≈ 7.84
 
-## Notes
-- Reference PDFs and tutorial folders are ignored by git and not part of the submission.
-- Add dashboard screenshots to `dashboard_screenshots/` before finalizing.
+## References
+1. Gueymard, C. A. (2019). A review of validation methodologies and statistical performance indicators for solar radiation models. Solar Energy, 191, 300–333. https://doi.org/10.1016/j.solener.2019.09.006
+2. Virtanen, P., et al. (2020). SciPy 1.0. Nature Methods, 17, 261–272.
+3. Waskom, M. (2021). seaborn. JOSS, 6(60), 3021.
+4. Python Windrose Library. URL:https://github.com/python-windrose/windrose
+5. Day1–Day3 tutorials (used as blueprint), KAIM instructions and sample blueprint.
+
+
+### AI Assistance Disclosure
+I used ChatGPT (OpenAI, accessed 9 Nov 2025) to assist with wording, code scaffolding, and documentation structure. All analysis and final decisions are my own.

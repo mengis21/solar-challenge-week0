@@ -37,7 +37,7 @@ def load_single(path: str) -> pd.DataFrame:
 
 
 def list_csvs(data_dir: str = "data") -> List[str]:
-    """List CSV file paths under a directory (non-recursive)."""
+    """List CSV file paths under a directory"""
     if not os.path.isdir(data_dir):
         raise NotADirectoryError(f"Directory not found: {data_dir}")
     files = []
