@@ -1,6 +1,6 @@
-# Solar Data Discovery – Week 0 Final Report (Draft)
+# Solar Data Discovery – Week 0 Final Report
 
-Short, clear, and practical. This draft follows our style and can be converted to PDF.
+Short, clear, and practical. This follows our style and can be converted to PDF.
 
 ## 1. Business Objective
 - MoonLight Energy Solutions needs a quick analysis to guide solar investment strategy.
@@ -18,10 +18,13 @@ Short, clear, and practical. This draft follows our style and can be converted t
 - Modeling (baseline): Linear Regression and RandomForest. Metrics saved to `metrics/baseline.json`.
 - Dashboard: Streamlit (`app.py`) for quick exploration.
 
-## 4. Key Findings (to be refined after notebook runs)
-- [Placeholder] Country with highest median GHI: ...
-- [Placeholder] Variability notes: ...
-- [Placeholder] Cleaning impact on ModA/ModB: ...
+## 4. Key Findings
+- Highest average GHI: Benin (≈235.93 W/m²), then Togo (≈223.38), then Sierra Leone (≈180.42).
+- Highest average DNI: Benin (≈166.66 W/m²), then Togo (≈147.58), then Sierra Leone (≈100.70).
+- Highest average DHI: Togo (≈112.63 W/m²), then Benin (≈111.54), then Sierra Leone (≈106.60).
+- Medians near zero are expected due to many nighttime observations; means are better for ranking solar potential here.
+- Variability (std of GHI) is larger in Benin (≈328.13) and Togo (≈316.96) than Sierra Leone (≈273.84), consistent with stronger daytime peaks.
+- Cleaning effect: visuals suggest ModA/ModB improve after cleaning; quantify in a follow-up (see country EDA notebooks).
 
 ## 5. Cross-Country Comparison
 - Boxplots: GHI, DNI, DHI by country.
@@ -29,8 +32,11 @@ Short, clear, and practical. This draft follows our style and can be converted t
 - Optional tests: ANOVA and Kruskal on GHI.
 
 Results snapshot:
-- [Placeholder] ANOVA p-value: ... (significant if p < 0.05)
-- [Placeholder] Ranking by average GHI: ...
+- ANOVA on GHI: F ≈ 4564.77, p ≈ 0.0 (differences across countries are significant).
+- Kruskal–Wallis on GHI: H ≈ 7473.82, p ≈ 0.0.
+- Ranking by average GHI: Benin > Togo > Sierra Leone.
+- Ranking by average DNI: Benin > Togo > Sierra Leone.
+- Ranking by average DHI: Togo > Benin > Sierra Leone.
 
 ## 6. Baseline Modeling Results
 - Best model: RandomForestRegressor
@@ -54,11 +60,10 @@ Results snapshot:
 - Scripts:
   - Baseline: `python src/model_baseline.py`
   - Cleaned CSVs: `python src/clean_countries.py`
+  - Country stats + tests: `python src/summarize_countries.py` (writes `metrics/country_summary.json`)
   - Streamlit: `streamlit run app.py`
 
 ## 10. Acknowledgements
 - References: Day1–Day3 tutorials (used as guidance only), KAIM instructions and sample blueprint.
 
-*** End of Draft ***
-*** Replace placeholders after running notebooks and capturing visuals. ***
-*** Convert this file to PDF as final submission. ***
+Convert this file to PDF for final submission after adding screenshots.
