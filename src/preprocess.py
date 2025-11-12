@@ -43,8 +43,8 @@ def find_datetime_column(df: pd.DataFrame) -> Optional[str]:
 def parse_datetime(df: pd.DataFrame, col: str) -> pd.DataFrame:
     """Parse a column to datetime, in-place style but returns DataFrame for chaining."""
     out = df.copy()
-    if col in out.columns:
-        out[col] = pd.to_datetime(out[col], errors="coerce", infer_datetime_format=True)
+        if col in out.columns:
+            out[col] = pd.to_datetime(out[col], errors="coerce")
     return out
 
 

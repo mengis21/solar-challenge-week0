@@ -1,0 +1,39 @@
+{
+  "metrics": {
+    "LinearRegression": {
+      "MAE": 15.932366411119787,
+      "RMSE": 24.136254997689036,
+      "CV_MAE_mean": 16.165440763194976,
+      "CV_RMSE_mean": 24.751681062947693
+    },
+    "RandomForestRegressor": {
+      "MAE": 3.6840269227637092,
+      "RMSE": 7.841036461885103,
+      "CV_MAE_mean": 8.458797757454489,
+      "CV_RMSE_mean": 17.379386715807435
+    },
+    "best_model": "RandomForestRegressor",
+    "cv_sample_size": 5000
+  },
+  "meta": {
+    "rows_total": 1576800,
+    "rows_used": 100000,
+    "n_features": 21,
+    "target": "GHI",
+    "feature_cols_sample": [
+      "DNI",
+      "DHI",
+      "ModA",
+      "ModB",
+      "Tamb",
+      "RH",
+      "WS",
+      "WSgust",
+      "WSstdev",
+      "WD"
+    ],
+    "missing_before_train": 0,
+    "missing_before_test": 0,
+    "imputer_strategy": "median"
+  }
+}
