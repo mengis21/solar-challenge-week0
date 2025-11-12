@@ -19,6 +19,7 @@ ________________________________________________________________________________
 - `notebooks/` — per-country EDA and cross-country comparison
 - `metrics/` — saved metrics and summaries (e.g., baseline.json, country_summary.json)
 - `data/` — ignored by git. Holds per-country CSVs and cleaned CSVs
+- `dashboard_screenshots`    # Screenshot of the Deployed dashboard
 - `app.py` — Streamlit dashboard entry point
 - `.github/workflows/`    # CI workflows
 
